@@ -1,0 +1,193 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Custom Font */
+@font-face {
+    font-family: 'ObjectSans'; /*a name to be used later*/
+    src: url('ObjectSans/ObjectSans-Regular.otf'); /*URL to font*/
+}
+@font-face {
+    font-family: 'Playfair'; /*a name to be used later*/
+    src: url('Playfair_Display/PlayfairDisplay-VariableFont_wght.ttf'); /*URL to font*/
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+a:hover, a:visited, a:link, a:active
+{
+    text-decoration: none;
+}
+
+/* Main CSS */
+*{
+    -webkit-user-drag: none;
+    
+}
+body{
+    background-color:#1E1E1E;
+    font-family: 'ObjectSans';
+    overflow-x: hidden;
+}
+.head{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border-bottom: 0.5px solid #a4a4a476;
+}
+.head > * {
+    font-size: 1rem;
+    margin:20px 0 14px;
+    flex: 1;
+    z-index: 1;
+    text-align: center;
+    text-transform: uppercase;
+    color:#415A77;
+}
+.head > a:hover{
+    color:#778DA9;
+}
+
+.logo{
+    user-select: none;
+    transform: translate(0em,-0.2em);
+    padding:0 1rem;
+    max-width: 4em;
+}
+
+#TextAnimation{
+  font-family: 'Playfair';
+  color:#4a637f;
+  white-space: nowrap;
+  text-align: center;
+  font-size: min(25vw,13rem);
+  margin-top: -2rem;
+  user-select: none;
+  z-index: -1;
+}
+.char{
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.youtube-container {
+    user-select: none;
+    position: relative;
+    width: 80vw;
+    margin: -7rem auto 0rem;
+    padding-bottom: 40vw;
+    overflow: hidden;
+}
+
+.youtube-container iframe,.youtube-container object,.youtube-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.videoDesc{
+    font-size: 0.8rem;
+    width: fit-content;
+    color:#415A77;
+    opacity: 0;
+    margin: -20rem 5rem 0 auto;
+    position:relative;
+    right:0;
+}
+
+.bottomLogo{
+  height: 40px;
+  position:absolute;
+  opacity: 50;
+  left: 10px;
+  bottom:10px;
+  transition:all 0.3s ease-in;
+  -webkit-user-drag: none;
+}
+.bottomLogo:hover{
+  transform: rotate(90deg);
+}
+
+footer{
+  border-top: 0.5px solid #a4a4a476;
+}
+
+
+@media only screen and (min-width: 1250px) {
+.videoDesc{
+  opacity: 100;
+}
+.youtube-container{
+  width: 60vw;
+  padding-bottom: 30vw;
+}
+}
