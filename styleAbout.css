@@ -1,0 +1,267 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Custom Font */
+@font-face {
+    font-family: 'ObjectSans'; /*a name to be used later*/
+    src: url('ObjectSans/ObjectSans-Regular.otf'); /*URL to font*/
+}
+@font-face {
+    font-family: 'Playfair'; /*a name to be used later*/
+    src: url('Playfair_Display/PlayfairDisplay-VariableFont_wght.ttf'); /*URL to font*/
+}
+@font-face {
+    font-family: 'CormorantInfant'; /*a name to be used later*/
+    src: url('Cormorant_Infant/CormorantInfant-Light.ttf'); /*URL to font*/
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+a:hover, a:visited, a:link, a:active
+{
+    text-decoration: none;
+}
+::-moz-selection { /* Code for Firefox */
+  color: #181818;
+  background: #4a637f;
+}
+::selection {
+  color: #181818;
+  background: #4a637f;
+}
+
+/* Main CSS */
+*{
+  -webkit-user-drag: none;
+}
+body{
+  background-color:#181818;
+  font-family: 'ObjectSans';
+  overflow-x:hidden;
+}
+main{
+  position: relative;
+  visibility: hidden;
+}
+
+/* header */
+.head{
+  background-color: #181818;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border-bottom: 0.5px solid #a4a4a476;
+}
+.head > * {
+  font-size: min(1rem,3vw);
+  margin:min(1rem,3vw) auto;
+  z-index: 1;
+  flex: 1;
+  text-align: center;
+  text-transform: uppercase;
+  color:#415A77;
+}
+.head > a:hover u{
+  text-decoration: none;
+}
+.head > a:hover {
+  color:#778DA9;
+}
+.logo{
+  user-select: none;
+  padding:0 1em;
+  max-width: 4em;
+}
+
+
+/* Main About */
+body{
+  color: #4a637f;
+  font-size: 1rem;
+}
+#Hero{
+  font-family: 'Playfair';
+  font-size: min(20vw , 13rem);
+  text-align: center;
+  user-select: none;
+  line-height: 0.9;
+  position:relative;
+}
+#Hero::after{
+  content: "";
+  background: #4a637f96;
+  position: absolute;
+  top: 115%;
+  left: 40%;
+  height: 1px;
+  width: 20%;
+}
+
+.bioContainer{
+  margin:2rem 10vw 0;
+  display: flex;
+  gap: 10vw;
+  align-items: center;
+  justify-content: center;
+}
+.bio{
+  flex-basis: 65%;
+  max-width: 27rem;
+  padding:auto 0;
+  font-family: 'CormorantInfant';
+}
+
+.photo1{
+  /* border:1px solid red; */
+  height: 21rem;
+  width: 13.86rem;
+  background-image: url('Portfolio_photos/Screen\ Shot\ 2023-06-08\ at\ 3.46.49\ PM.png');
+  background-repeat:no-repeat;
+  background-size: 100% auto;
+  background-position: 50% 50%;
+  filter: grayscale(53%) hue-rotate(360deg);
+}
+
+.logos{
+  width: calc(21rem * 0.66);
+  height: 3rem;
+}
+.Logo{
+  position:absolute;
+  height: 3rem; /* Must be same size as parent div to allign*/
+  width: 3rem; /* Must be same size as parent div to allign*/
+  filter: invert(39%) sepia(19%) saturate(758%) hue-rotate(171deg) brightness(90%) contrast(93%);
+}
+.bioEnd{
+  text-align: center;
+  margin:5rem 10vw 3rem;
+  font-family: 'CormorantInfant';
+}
+.bioEnd a{
+  color:#778DA9;
+}
+.bioEnd a:hover{
+  border-bottom: 1px solid #778DA9;
+}
+
+
+.Hero2{
+  font-family: 'Playfair';
+  font-size: 5rem;
+  text-align: center;
+  white-space: nowrap;
+  user-select: none;
+  line-height: 0.9;
+}
+
+.decoWrapper{
+  overflow: hidden;
+  position:absolute;
+  display:flex;
+  transform: translate(-50%,-50%) rotate(-45deg);
+  top:0;
+  left:20vw;
+  z-index: -5;
+  background-image: url('Portfolio_photos/experimental-paint-texture-6.jpeg');
+  background-repeat:no-repeat;
+  background-size: auto 100%;
+}
+
+.noise {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  right: -50%;
+  bottom: -50%;
+  width: 200%;
+  height: 200%;
+  background: transparent url('http://assets.iceable.com/img/noise-transparent.png') repeat 0 0;
+  background-repeat: repeat;
+  animation: bg-animation .2s infinite;
+  opacity: 1;
+  visibility: visible;
+}
+
+
+@keyframes bg-animation {
+    0% { transform: translate(0,0) }
+    10% { transform: translate(-5%,-5%) }
+    20% { transform: translate(-10%,5%) }
+    30% { transform: translate(5%,-10%) }
+    40% { transform: translate(-5%,15%) }
+    50% { transform: translate(-10%,5%) }
+    60% { transform: translate(15%,0) }
+    70% { transform: translate(0,10%) }
+    80% { transform: translate(-15%,0) }
+    90% { transform: translate(10%,5%) }
+    100% { transform: translate(5%,0) }
+}
