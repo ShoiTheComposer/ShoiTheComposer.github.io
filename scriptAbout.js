@@ -2,18 +2,32 @@ gsap.registerPlugin(ScrollTrigger);
 
 //Page Load Animation
 gsap.timeline()
-    .set("main",{
-        visibility: "visible",
-    })
-    .from(".pages",{
-        y: "-20px",
-        opacity: 0,
-        stagger: 0.1,
-        duration: 0.3,
-    })
+  .set("main",{
+      visibility: "visible",
+  })
+  .from(".pages",{
+      y: "-20px",
+      opacity: 0,
+      stagger: 0.1,
+      duration: 0.3,
+  })
+  .from("#Hero",{
+    y: "20px",
+    opacity: 0,
+    duration: 1,
+  },"<0.3")
+  .from(".bioContainer",{
+      y: "20px",
+      opacity: 0,
+      duration: 1,
+      stagger: 0.2,
+  },"<0.3")
+  .from(".decoWrapper",{
+      opacity: 0,
+      duration: 1,
+  },"<0.3")
 
 //circle animation
-
 var radius = 100;
 var speed = 2.5; //works with multiple of 0.5
 
@@ -27,7 +41,7 @@ TweenLite.set(".Logo", {
 var tl1 = new TimelineMax({repeat: -1});
 var tl2 = new TimelineMax({repeat: -1});
 
-tl1.to(".Logo",{
+tl1.to(".Logo", {
   y: radius,
   ease: Sine.easeInOut,
   duration: speed ,
@@ -69,15 +83,44 @@ const loop = horizontalLoop(boxes, {
 });
 loop.play()
 
-//Scroll trigger animation
-// gsap.to(".photo1", {
-//   height: "18rem",
-//   duration: 2,
-//   backgroundPosition: "50% 50%",
-//   scrollTrigger: { trigger: ".square", start: "top center", markers: true },
-// });
+// Scroll trigger animation
+let photo_tl = gsap.timeline({
+  scrollTrigger: { 
+    trigger: ".bio", 
+    start: "center 100%", 
+    end: "center 0%",
+    scrub: true,
+  }})
+  .set(".photo1", {
+    clipPath: "inset(50% 0% 0% 0%)",
+  })
+  .to(".photo1", {
+    clipPath: "inset(0% 0% 0% 0%)",
+  })
+  .to(".photo1", {
+    clipPath: "inset(0% 0% 50% 0%)",
+  })
 
 
+// let bio = gsap.utils.toArray('.bioContainer')
+// bio.forEach((item, index) => {
+//   gsap.set(item, {
+//     opacity: 0,
+//   })
+
+// let tl = gsap.timeline({
+//   scrollTrigger: {
+//   trigger: item,
+//   start:"bottom 100%", 
+//   toggleActions:"restart none none reverse",
+//   end: "bottom 80%",
+//   markers:true
+//   }})
+//   tl.to(item, {
+//     opacity: 1,
+//     duration: 0.5,
+//   })
+// })
 
 /////Put at end Gsap Animation///////
 function horizontalLoop(items, config) {

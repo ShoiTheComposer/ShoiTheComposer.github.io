@@ -90,6 +90,9 @@ a:hover, a:visited, a:link, a:active
 {
     text-decoration: none;
 }
+html{
+  overflow-x:hidden 
+} 
 ::-moz-selection { /* Code for Firefox */
   color: #181818;
   background: #4a637f;
@@ -98,6 +101,7 @@ a:hover, a:visited, a:link, a:active
   color: #181818;
   background: #4a637f;
 }
+
 
 /* Main CSS */
 *{
@@ -146,28 +150,27 @@ main{
 /* Main About */
 body{
   color: #4a637f;
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 #Hero{
   font-family: 'Playfair';
   font-size: min(20vw , 13rem);
   text-align: center;
   user-select: none;
-  line-height: 0.9;
   position:relative;
 }
 #Hero::after{
   content: "";
   background: #4a637f96;
   position: absolute;
-  top: 115%;
+  top: 110%;
   left: 40%;
   height: 1px;
   width: 20%;
 }
 
 .bioContainer{
-  margin:2rem 10vw 0;
+  margin:9rem 10vw 0;
   display: flex;
   gap: 10vw;
   align-items: center;
@@ -181,14 +184,10 @@ body{
 }
 
 .photo1{
-  /* border:1px solid red; */
-  height: 21rem;
-  width: 13.86rem;
-  background-image: url('Portfolio_photos/Screen\ Shot\ 2023-06-08\ at\ 3.46.49\ PM.png');
-  background-repeat:no-repeat;
-  background-size: 100% auto;
-  background-position: 50% 50%;
+  width: calc(21rem * 0.66);
+  object-fit: cover;
   filter: grayscale(53%) hue-rotate(360deg);
+  clip-path: inset(50% 0% 0% 0%);;
 }
 
 .logos{
@@ -201,9 +200,10 @@ body{
   width: 3rem; /* Must be same size as parent div to allign*/
   filter: invert(39%) sepia(19%) saturate(758%) hue-rotate(171deg) brightness(90%) contrast(93%);
 }
+
 .bioEnd{
   text-align: center;
-  margin:5rem 10vw 3rem;
+  margin:10rem 10vw 3rem;
   font-family: 'CormorantInfant';
 }
 .bioEnd a{
@@ -251,7 +251,6 @@ body{
   visibility: visible;
 }
 
-
 @keyframes bg-animation {
     0% { transform: translate(0,0) }
     10% { transform: translate(-5%,-5%) }
@@ -264,4 +263,20 @@ body{
     80% { transform: translate(-15%,0) }
     90% { transform: translate(10%,5%) }
     100% { transform: translate(5%,0) }
+}
+
+/* footer */
+footer{
+  height:5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: 0.5px solid #a4a4a476;
+  width:min(80vw,calc(calc(21rem * 0.66) + 27rem + 10vw));
+  margin:0 auto;
+}
+.copy{
+  color:#4b596b;
+  font-family: 'Playfair';
+  font-size: 0.5rem;
 }

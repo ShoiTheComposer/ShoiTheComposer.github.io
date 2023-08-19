@@ -86,6 +86,9 @@ a:hover, a:visited, a:link, a:active
 {
     text-decoration: none;
 }
+html{
+  overflow-x:hidden 
+} 
 ::-moz-selection { /* Code for Firefox */
   color: #181818;
   background: #4a637f;
