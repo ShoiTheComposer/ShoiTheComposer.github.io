@@ -87,6 +87,5 @@ gsap.to(sections, {
     // base vertical scrolling on how wide the container is so it feels more natural.
     end: "+=832",
     start: "top top",
-    markers: true,
   }
 });
