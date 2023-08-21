@@ -19,10 +19,11 @@ gsap.timeline()
         opacity: 0,
         duration: 0.5,
     },"<0.5")
-    .from(".bottomLogo",{
+    .from("footer",{
+        y: "20px",
         opacity: 0,
         duration: 0.5,
-    },"<")
+    },"<0.25")
 
 // Background text Animation
 const TextAnimation = document.getElementById("TextAnimation");

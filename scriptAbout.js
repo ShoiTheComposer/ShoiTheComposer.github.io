@@ -26,13 +26,29 @@ gsap.timeline()
       opacity: 0,
       duration: 1,
   },"<0.3")
+  .from(".bioEnd",{
+      opacity: 0,
+      duration: 1,
+  },"<0.3")
+  .from("footer",{
+      opacity: 0,
+      duration: 1,
+  },"<0.3")
+  .from(".socials > a",{
+      opacity: 0,
+      y: "10px",
+      duration: 1,
+      stagger: 0.3
+  },"<0.3")
+
+  
 
 //circle animation
 var radius = 100;
 var speed = 2.5; //works with multiple of 0.5
 
 TweenLite.set(".Logo", { 
-  xPercent: 100, 
+  xPercent: 0, 
   yPercent: 0, 
   x: -radius, 
   y: -radius,
@@ -100,27 +116,6 @@ let photo_tl = gsap.timeline({
   .to(".photo1", {
     clipPath: "inset(0% 0% 50% 0%)",
   })
-
-
-// let bio = gsap.utils.toArray('.bioContainer')
-// bio.forEach((item, index) => {
-//   gsap.set(item, {
-//     opacity: 0,
-//   })
-
-// let tl = gsap.timeline({
-//   scrollTrigger: {
-//   trigger: item,
-//   start:"bottom 100%", 
-//   toggleActions:"restart none none reverse",
-//   end: "bottom 80%",
-//   markers:true
-//   }})
-//   tl.to(item, {
-//     opacity: 1,
-//     duration: 0.5,
-//   })
-// })
 
 /////Put at end Gsap Animation///////
 function horizontalLoop(items, config) {
