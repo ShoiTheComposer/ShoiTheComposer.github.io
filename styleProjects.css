@@ -175,15 +175,21 @@ main{
 }
 
 /* Personal Projects */
+.projectsWrapper{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 .projectsWrapper h1{
   text-align: center;
+  padding-top: 1rem;
   font-size: 3rem;
-  padding-top: 4.5rem;
-  padding-bottom: 4.5rem;
+  border-bottom: 0.5px solid var(--border-color);
 }
 
 .cardWrapper{
-  padding: 0 calc((100vw - min(50vw, 500px))/ 2) 2rem;
+  padding: 0 calc((100vw - min(50vw, 500px))/ 2);
   align-items: flex-start;
   display: flex;
   flex-wrap: nowrap;
@@ -197,7 +203,7 @@ main{
   width:min(50vw, 500px);
 }
 .card p{
-  margin: 2rem 0;
+  margin: 2rem 0 0;
 }
 .videoContainer{
   flex-shrink: 0;
@@ -243,27 +249,30 @@ footer{
   font-size: 0.75rem;
 }
 
-@media only screen and (max-height: 500px) {
-  .cardWrapper{
-    gap: 0vw;
+@media only screen and (max-height: 500px) and (min-width: 800px){
+  .projectsWrapper h1{
+    padding-top: 0rem;
+    line-height: 1.2;
+  }
+  footer{
+    height:3rem;
   }
   .card{
-    width:100vw;
-    display:flex;
-    gap: 5vw;
+    display: flex;
+    width:90vw;
+    gap: 10%;
     align-items: center;
   }
   .card p{
-    width: 35vw;
+    margin: 10px 0 0;
+    width: 45%;
   }
   .videoContainer{
-    width:40vw;
-    padding-bottom: 22.5%;
-  }
-}
-@media only screen and (max-height: 700px) {
-  .projectsWrapper h1{
-    padding-top: 3vh;
-    padding-bottom: 3vh;
+    flex-shrink: 0;
+    width: 45%;
+    height: 0;
+    position: relative;
+    padding-bottom: 25.3125%;
+    overflow: hidden;
   }
 }

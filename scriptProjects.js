@@ -11,11 +11,12 @@ gsap.timeline()
         stagger: 0.1,
         duration: 0.3,
     })
-    .set(".shapes",{
-        zIndex: -5,
-    },"<")
     .from(".hero h1",{
         y: "-20px",
+        opacity: 0,
+        duration: 0.3,
+    })
+    .from(".shape",{
         opacity: 0,
         duration: 0.3,
     })
