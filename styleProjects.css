@@ -1,12 +1,6 @@
 /* Main CSS */
 body{
-  background-color: var(--background-color);
   color: var(--text-main-color);
-  overflow-x:hidden;
-}
-main{
-  position: relative;
-  visibility: hidden;
 }
 
 /* header */

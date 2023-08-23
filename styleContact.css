@@ -1,0 +1,192 @@
+/* header */
+.head{
+    background-color: var(--background-color);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border-bottom: 0.5px solid var(--border-color);
+}
+.head > * {
+    font-size: min(1rem,3vw);
+    margin:min(1rem,3vw) auto;
+    z-index: 1;
+    flex: 1;
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--text-main-color);
+}
+.head > a:hover u{
+    text-decoration: none;
+}
+.head > a:hover {
+    color: var(--text-accent-color);
+}
+.logo{
+    user-select: none;
+    padding:0 1em;
+    max-width: 4em;
+}
+
+/* Contact Main */
+main{
+    font-family: 'CormorantInfant';
+    text-transform: uppercase;
+    color: var(--background-color);
+    background: rgb(178,191,207);
+    background: -moz-radial-gradient(circle, rgba(178,191,207,1) 0%, rgba(103,128,159,1) 81%);
+    background: -webkit-radial-gradient(circle, rgba(178,191,207,1) 0%, rgba(103,128,159,1) 81%);
+    background: radial-gradient(circle, rgba(178,191,207,1) 0%, rgba(103,128,159,1) 81%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#b2bfcf",endColorstr="#67809f",GradientType=1);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 5vw;
+    height: calc(100vh - 5rem - min(4rem,12vw));
+}
+/* Whiteout Selection Color */
+main *::-moz-selection { /* Code for Firefox */
+    color: var(--text-main-color);
+    background: var(--background-color);
+}
+main *::selection {
+    color: var(--text-main-color);
+    background: var(--background-color);
+}
+main h1{
+    flex-basis: 45%;
+    max-width: 500px;
+    font-size: 5rem;
+    text-align: center;
+}
+.char ,.line{
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none;/* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+}
+#contact-form{
+    flex-basis: 45%;
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+}
+
+
+textarea,input,#contact-form button{
+    resize: none;
+    border: none;
+    padding: 0.4rem;
+    border: 2px solid white;
+    margin-bottom: -1px;
+    border-radius: 3px;
+    transition: border-radius 0.3s ease-in;
+    box-shadow: var(--background-color) 4px 4px 0 0;
+}
+
+#contact-form label{
+    margin-top: 1rem;
+}
+#contact-form button{
+    background-color: var(--text-accent-color);
+    border: 2px solid var(--background-color);
+    box-shadow: var(--background-color) 4px 4px 0 0;
+    color: var(--background-color);
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 600;
+    font-size: 18px;
+    padding: 0 18px;
+    line-height: 50px;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    margin: 1rem 0;
+    transition: border-radius 0.1s ease-out, background-color 0.1s ease-in;
+}
+
+#contact-form button:hover {
+  background-color: var(--text-accent-color);
+}
+
+#contact-form button:active {
+  box-shadow: var(--background-color) 2px 2px 0 0;
+  transform: translate(2px, 2px);
+}
+
+@media (min-width: 768px) {
+  .button-74 {
+    min-width: 120px;
+    padding: 0 25px;
+  }
+}
+textarea:focus, input:focus, #contact-form button:hover{
+    border-radius: 15px;
+    outline: none;
+}
+textarea::-moz-selection , input::-moz-selection { /* Code for Firefox */
+    color: white;
+    background: var(--background-color);
+}
+textarea::selection, input::selection{
+    color: white;
+    background: var(--background-color);
+}
+
+/* footer */
+footer{
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    width:min(80vw,calc(calc(21rem * 0.66) + 27rem + 10vw));
+    margin:0 auto;
+}
+.socials{
+    display:flex;
+    gap: 1rem;
+}
+.socials svg{
+    display:flex;
+    gap: 1rem;
+    filter: invert(55%) sepia(40%) saturate(259%) hue-rotate(174deg) brightness(92%) contrast(88%);
+}
+.socials svg:hover{
+    filter: invert(76%) sepia(5%) saturate(731%) hue-rotate(173deg) brightness(101%) contrast(93%);
+}
+.copy{
+    color:var(--text-main-color);
+    font-family: 'Playfair';
+    font-size: 0.75rem;
+}
+
+@media only screen and (max-width: 600px) {
+    main{
+        flex-direction: column;
+        gap: 0;
+        height: auto;
+    }
+    #contact-form{
+        max-width: none;
+        width: 80%;
+    }
+    .line{
+        text-align: center;
+    }
+}
+
+@media only screen and (max-height: 500px) {
+    main{
+        height: auto;
+    }
+    #contact-form{
+        margin: 2rem 0;
+        max-width: none;
+        width: 80%;
+    }
+}
