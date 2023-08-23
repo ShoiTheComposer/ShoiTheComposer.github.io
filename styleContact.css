@@ -1,3 +1,9 @@
+body{
+    background-color: var(--background-color);
+    font-family: 'ObjectSans';
+    overflow-x:hidden;
+}
+
 /* header */
 .head{
     background-color: var(--background-color);
@@ -119,12 +125,6 @@ textarea,input,#contact-form button{
   transform: translate(2px, 2px);
 }
 
-@media (min-width: 768px) {
-  .button-74 {
-    min-width: 120px;
-    padding: 0 25px;
-  }
-}
 textarea:focus, input:focus, #contact-form button:hover{
     border-radius: 15px;
     outline: none;
@@ -167,9 +167,8 @@ footer{
 
 @media only screen and (max-width: 600px) {
     main{
-        flex-direction: column;
         gap: 0;
-        height: auto;
+        flex-direction: column;
     }
     #contact-form{
         max-width: none;
@@ -180,7 +179,7 @@ footer{
     }
 }
 
-@media only screen and (max-height: 500px) {
+@media only screen and (max-height: 650px) {
     main{
         height: auto;
     }

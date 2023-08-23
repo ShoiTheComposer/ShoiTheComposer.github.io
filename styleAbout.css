@@ -32,6 +32,9 @@
 body{
   color: var(--text-main-color);
   font-size: 1.2rem;
+  background-color: var(--background-color);
+  font-family: 'ObjectSans';
+  overflow-x:hidden;
 }
 #Hero{
   font-family: 'Playfair';

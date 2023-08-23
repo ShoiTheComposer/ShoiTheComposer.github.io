@@ -49,9 +49,6 @@ body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
-  background-color: var(--background-color);
-  font-family: 'ObjectSans';
-  overflow-x:hidden;
 }
 
 /* A elements that don't have a class get default styles */
