@@ -71,7 +71,7 @@ body{
   width: calc(21rem * 0.66);
   object-fit: cover;
   filter: grayscale(53%) hue-rotate(360deg);
-  clip-path: inset(50% 0% 0% 0%);;
+  clip-path: inset(0% 0% 0% 0%);;
 }
 
 .logos{

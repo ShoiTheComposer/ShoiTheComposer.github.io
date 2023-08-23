@@ -1,7 +1,10 @@
 body{
   background-color: var(--background-color);
   font-family: 'ObjectSans';
-  overflow-x:hidden;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 /* header */
@@ -37,7 +40,7 @@ body{
   font-family: 'Playfair';
   font-size: min(25vw,13rem);
   white-space: nowrap;
-  color:var(--text-main-color);
+  color:var(--text-dark-color);
   text-align: center;
   margin-left: -100%;
   margin-right: -100%;
@@ -75,12 +78,6 @@ body{
   margin: -17rem auto 0 calc((100vw - 750px)/4 * 2.5 + 750px);
 }
 
-@media screen and (min-width: 1020px) {
-  .videoDesc{
-    display:initial;
-  }
-}
-
 /* footer */
 footer{
   height:5rem;
@@ -89,7 +86,7 @@ footer{
   justify-content:space-between;
   border-top: 0.5px solid var(--border-color);
   width:min(80vw,calc(calc(21rem * 0.66) + 27rem + 10vw));
-  margin:5rem auto 0;
+  margin:1rem auto 0;
 }
 .bottomLogo{
   height: 2rem;
@@ -103,4 +100,13 @@ footer{
   color:var(--text-main-color);
   font-family: 'Playfair';
   font-size: 0.75rem;
+}
+
+@media screen and (min-width: 1020px) {
+  .videoDesc{
+    display:initial;
+  }
+}
+@media screen and (max-width: 800px){
+
 }

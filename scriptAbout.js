@@ -100,22 +100,37 @@ const loop = horizontalLoop(boxes, {
 loop.play()
 
 // Scroll trigger animation
-let photo_tl = gsap.timeline({
-  scrollTrigger: { 
-    trigger: ".bio", 
-    start: "center 100%", 
-    end: "center 0%",
-    scrub: true,
-  }})
-  .set(".photo1", {
+
+//responsive
+let mm = gsap.matchMedia();
+
+mm.add("(min-width: 700px)", () => {
+  gsap.set(".photo1", {
     clipPath: "inset(50% 0% 0% 0%)",
   })
-  .to(".photo1", {
+  let photo_tl = gsap.timeline({
+    scrollTrigger: { 
+      trigger: ".bio", 
+      start: "clamp(center 100%)", 
+      end: "clamp(center 0%)",
+      scrub: true,
+    }})
+    .set(".photo1", {
+      clipPath: "inset(50% 0% 0% 0%)",
+    })
+    .to(".photo1", {
+      clipPath: "inset(0% 0% 0% 0%)",
+    })
+    .to(".photo1", {
+      clipPath: "inset(0% 0% 50% 0%)",
+    })
+});
+mm.add("(max-width: 700px)", () => {
+  gsap.set(".photo1", {
     clipPath: "inset(0% 0% 0% 0%)",
   })
-  .to(".photo1", {
-    clipPath: "inset(0% 0% 50% 0%)",
-  })
+});
+
 
 /////Put at end Gsap Animation///////
 function horizontalLoop(items, config) {
