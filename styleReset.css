@@ -21,16 +21,33 @@ dd {
 
 /* Custom Font */
 @font-face {
-    font-family: 'ObjectSans'; /*a name to be used later*/
-    src: url('ObjectSans/ObjectSans-Regular.otf'); /*URL to font*/
+  font-family: Melody;
+  src: url(Fonts/Melody/BLMelody-Book.woff);
 }
 @font-face {
-    font-family: 'Playfair'; /*a name to be used later*/
-    src: url('Playfair_Display/PlayfairDisplay-VariableFont_wght.ttf'); /*URL to font*/
+  font-family: Harmony;
+  src: url(Fonts/Harmony/Harmony-Regular.otf);
 }
 @font-face {
-    font-family: 'CormorantInfant'; /*a name to be used later*/
-    src: url('Cormorant_Infant/CormorantInfant-Light.ttf'); /*URL to font*/
+  font-family: Neutral_Bold;
+  src: url(Fonts/NeutralFace/NeutralFace-Bold.otf);
+}
+@font-face {
+  font-family: Neutral_Regular;
+  src: url(Fonts/NeutralFace/NeutralFace.otf);
+}
+@font-face {
+  font-family: Baunk;
+  src: url(Fonts/BAUNK/Baunk.woff);
+}
+@font-face {
+  font-family: Triakis;
+  src: url(Fonts/Triakis/TriakisFont-Regular.otf);
+}
+
+/* Set Font weight to strong */
+strong{
+  font-family: Neutral_Bold;
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
@@ -89,6 +106,7 @@ select {
 a:hover, a:visited, a:link, a:active
 {
     text-decoration: none;
+    color: white;;
 }
 
 /* diable phone Scroll */
@@ -97,26 +115,6 @@ html{
 }
 main{
   position: relative;
-  visibility: hidden;
-}
-
-/* Whiteout Color */
-::-moz-selection { /* Code for Firefox */
-  color: var(--background-color);
-  background: var(--text-main-color);
-}
-::selection {
-  color: var(--background-color);
-  background: var(--text-main-color);
-}
-
-/* Custom Color Pallete */
-:root {
-    --background-color: #151515;
-    --border-color: #a4a4a476;
-    --text-main-color:#778DA9;
-    --text-dark-color:#323c48;
-    --text-accent-color: #B7C3D2;
 }
 
 /* disable Drag */
@@ -125,4 +123,23 @@ main{
 -khtml-user-drag: none;
 -moz-user-drag: none;
 -o-user-drag: none;
+}
+
+/* Whiteout Color */
+::-moz-selection { /* Code for Firefox */
+    color: var(--background-color);
+    background: var(--text-main-color);
+}
+::selection {
+    color: var(--background-color);
+    background: var(--text-main-color);
+}
+
+/* Custom Color Pallete */
+:root {
+    --background-color: hsl(0, 0%, 95%);
+    --border-color: #a4a4a476;
+    --text-main-color:#000000;
+    --text-dark-color:#323c48;
+    --text-accent-color: rgb(207, 169, 135);
 }
